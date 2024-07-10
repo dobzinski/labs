@@ -72,6 +72,8 @@ systemctl disable --now firewalld
 systemctl enable --now named
 ```
 
+8. Important! All machines must be configured for this.
+
 Self signed certificates
 ===
 
