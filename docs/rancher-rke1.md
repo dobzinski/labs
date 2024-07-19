@@ -77,7 +77,6 @@ INFO[0221] Finished building Kubernetes cluster successfully
 ```
 
 ## Configure kubectl
-https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 ```
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"; chmod +x kubectl; mv kubectl /usr/local/bin/
 ```
@@ -92,7 +91,6 @@ kubectl get nodes
 ```
 
 ## Install Helm
-https://helm.sh/docs/intro/install/
 ```
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
 ```
@@ -127,7 +125,6 @@ kubectl get namespaces
 ```
 
 ## Install Cert-manager
-https://github.com/cert-manager/cert-manager/releases
 ```
 export CERT_MANAGER_VERSION=v1.15.1
 ```
@@ -163,5 +160,11 @@ kubectl get pods -n cattle-system
 
 Wait a few minutes and click this link https://rancher2.myrancher.lab
 
-# Source
+# Sources
 https://medium.com/@enterco-0/installing-rancher-kubernetes-on-a-single-node-cluster-969584274750
+
+https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
+
+https://helm.sh/docs/intro/install/
+
+https://github.com/cert-manager/cert-manager/releases
