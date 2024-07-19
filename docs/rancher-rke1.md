@@ -57,7 +57,7 @@ rke config - name cluster.yml
 [+] Override Hostname of host (192.168.0.20) [none]: rancher2.myrancher.lab
 [+] Internal IP of host (192.168.0.20) [none]:
 [+] Docker socket path on host (192.168.0.20) [/var/run/docker.sock]:
-[+] Network Plugin Type (flannel, calico, weave, canal, aci) [canal]:
+[+] Network Plugin Type (flannel, calico, weave, canal, aci) [canal]: flannel
 [+] Authentication Strategy [x509]:
 [+] Authorization Mode (rbac, none) [rbac]:
 [+] Kubernetes Docker image [rancher/hyperkube:v1.21.5-rancher1]:
