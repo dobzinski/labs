@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app1
+  namespace: app1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: app1
+  template:
+    metadata:
+      labels:
+        app: app1
+    spec:
+      containers:
+        - name: app1
+          image: nginx:1.8.1
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 80
+            name: web
+            protocol: TCP
+          env:
+            - name: User
+              value: admin
+            - name: Environment
+              value: Dev             
+          readinessProbe:
+            httpGet:
+              port: web
+              path: /
