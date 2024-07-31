@@ -1,5 +1,8 @@
 # Lab for create CronJob to run a Shell Script in NFS share
-_Using the manifests to create_
+
+Using the manifests to create this Lab
+
+_2024-07-30_
 
 ## Login with SSH to NFS Server (192.168.100.100)
 Create the NFS Server to will share folder to your Downstream Cluster (repeat "echo" for all IPs Workers Nodes)
