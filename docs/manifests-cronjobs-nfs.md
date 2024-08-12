@@ -71,11 +71,10 @@ status:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  generation: 1
   name: job1
   namespace: prod
 spec:
-  concurrencyPolicy: Allow
+  concurrencyPolicy: Forbid
   failedJobsHistoryLimit: 1
   jobTemplate:
     metadata:
@@ -102,6 +101,7 @@ spec:
             - name: vol-nfs1
               persistentVolumeClaim:
                 claimName: pvc-nfs1
+  timeZone: "America/Sao_Paulo"
   schedule: '*/1 * * * *'
   successfulJobsHistoryLimit: 3
   suspend: false
