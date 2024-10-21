@@ -1,4 +1,4 @@
-# Install GitLab on Rancher
+# Install GitLab on Rancher Using Deployment
 
 ## Steps
 
@@ -56,7 +56,7 @@
 
 10 - Go to Workloads / Deployments
 
-11 - Click in Create button and inform:
+11 - Click the Create button and inform:
    - Name: gitlab
    - Namespace: infra
    - Image: gitlab/gitlab-ce:latest
@@ -78,7 +78,30 @@
          - Mount Point: /var/opt/gitlab
        - Select Volume : vol-gitlab-log
          - Mount Point: /var/log/gitlab
+       - Networking:
+         - Service Type: Cluster IP
+         - Name: http
+         - Private Container: 80
+         - Protocol: TCP
 
-12 - Click Create button, and wait!
+12 - Click the Create button, and wait!
 
+13 - Go to Service Discovery / Ingress
 
+14 - Click the Create button and inform:
+   - Name: gitlab-http
+   - Request Host: gitlab.example.com
+   - Path
+     -  Prefix: /
+     -  Target Service: gitlab
+     -  Port: 80
+   - Click Create button
+
+15 - Open your Web Browser and insert link http://gitlab.example.com, you will see the Sign in form.
+
+16 - Back to Rancher, and go to Workloads / Pods, and Click on Execute Shell for gitlab Pod.
+
+17 - Run the command for reset password to the root user (minimum is 8 characters):
+```
+gitlab-rake "gitlab:password:reset[root]"
+```
