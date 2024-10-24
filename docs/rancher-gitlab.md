@@ -22,17 +22,17 @@
   - Name: pv-gitlab-etc
     - Volume Plugin: HostPath
     - Capacity 1GiB
-    - Path on the Node: /disk1/github/etc
+    - Path on the Node: /disk1/git/etc
     - Click Create button
   - Name: pv-gitlab-opt
     - Volume Plugin: HostPath
     - Capacity 10GiB
-    - Path on the Node: /disk1/github/opt
+    - Path on the Node: /disk1/git/opt
     - Click Create button
   - Name: pv-gitlab-log
     - Volume Plugin: HostPath
     - Capacity 10GiB
-    - Path on the Node: /disk1/github/log
+    - Path on the Node: /disk1/git/log
     - Click Create button
 
 8 - Go to Storage / PersistentVolumeClaims
