@@ -20,6 +20,11 @@ manager:
   ingress:
     enabled: true
     host: neuvector.example.com 
-    tls: true
+    #tls: true
+  env:
+    envs:
+      - env:
+        - name: CTRL_SERVER_IP
+          value: neuvector.example.com
 scanner:
   replicas: 1
