@@ -1,3 +1,6 @@
+global:
+  cattle:
+    url: https://neuvector.example.com/
 controller:
   #ingress:
   #  enabled: true
@@ -21,10 +24,5 @@ manager:
     enabled: true
     host: neuvector.example.com 
     #tls: true
-  env:
-    envs:
-      - env:
-        - name: CTRL_SERVER_IP
-          value: neuvector.example.com
 scanner:
   replicas: 1
