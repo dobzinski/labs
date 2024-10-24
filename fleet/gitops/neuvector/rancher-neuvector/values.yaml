@@ -1,17 +1,11 @@
-global:
-  cattle:
-    url: https://neuvector.example.com/
-  values:
-    controller:
-      replicas: 1
-    cve:
-      scanner:
-        replicas: 1
 controller:
   #ingress:
   #  enabled: true
   #  host: neuvector.example.com
   #  tls: true
+  replicas: 1
+  ranchersso:
+    enabled: false
   secret:
     enabled: true
     data:
@@ -27,3 +21,5 @@ manager:
     enabled: true
     host: neuvector.example.com 
     tls: true
+scanner:
+  replicas: 1
