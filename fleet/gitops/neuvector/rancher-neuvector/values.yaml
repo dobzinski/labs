@@ -8,8 +8,14 @@ global:
       scanner:
         replicas: 1
 controller:
-  ranchersso:
-    enabled: true
   ingress:
     enabled: true
     host: neuvector.example.com
+  secret:
+    enabled: true
+    data:
+      userinitcfg.yaml:
+        users:
+        - Fullname: admin
+          Password: password
+          Role: admin
