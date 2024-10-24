@@ -17,6 +17,14 @@ controller:
         - Fullname: admin
           Password: password
           Role: admin
+      ldapinitcfg.yaml: |
+        directory: OpenLDAP
+        Hostname: ldap.forumsys.com
+        Port: 389
+        base_dn: dc=example,dc=com
+        bind_dn: cn=read-only-admin,dc=example,dc=com
+        bind_password: password
+        Default_Role: reader
 manager:
   svc:
     type: ClusterIP
