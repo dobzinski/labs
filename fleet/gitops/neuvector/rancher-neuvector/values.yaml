@@ -1,6 +1,6 @@
 global:
   cattle:
-    url: https://rancher.example.com/
+    url: https://neuvector.example.com/
   values:
     controller:
       replicas: 1
@@ -26,3 +26,4 @@ manager:
   ingress:
     enabled: true
     host: neuvector.example.com 
+    tls: true
