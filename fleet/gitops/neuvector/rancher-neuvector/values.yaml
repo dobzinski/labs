@@ -8,14 +8,10 @@ global:
       scanner:
         replicas: 1
 controller:
-  managedsvc:
-      type: clusterIP
-      ingress:
-        enabled: true
-        host: neuvector.example.com
   #ingress:
   #  enabled: true
   #  host: neuvector.example.com
+  #  tls: true
   secret:
     enabled: true
     data:
@@ -24,3 +20,9 @@ controller:
         - Fullname: admin
           Password: password
           Role: admin
+manager:
+  svc:
+    type: ClusterIP
+  ingress:
+    enabled: true
+    host: neuvector.example.com 
