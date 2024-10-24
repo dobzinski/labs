@@ -10,3 +10,6 @@ global:
 controller:
   ranchersso:
     enabled: true
+  ingress:
+    enabled: true
+    host: neuvector.example.com
