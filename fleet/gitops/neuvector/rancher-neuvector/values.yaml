@@ -2,10 +2,6 @@ global:
   cattle:
     url: https://rancher.example.com/
 controller:
-  #ingress:
-  #  enabled: true
-  #  host: neuvector.example.com
-  #  tls: true
   replicas: 1
   ranchersso:
     enabled: false
@@ -23,6 +19,9 @@ controller:
         username_attr: uid
         Enable: true
         Default_Role: reader
+        group_mapped_roles:
+          - group: scientists
+            global_role: admin
   #secret:
   #  enabled: true
   #  data:
@@ -37,6 +36,6 @@ manager:
   ingress:
     enabled: true
     host: neuvector.example.com 
-    #tls: true
+    tls: true
 scanner:
   replicas: 1
