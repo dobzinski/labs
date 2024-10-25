@@ -23,7 +23,7 @@ controller:
   secret:
     enabled: true
     data:
-      userinitcfg.yaml:
+      userinitcfg.yaml: |
         users:
         -
           Fullname: user
