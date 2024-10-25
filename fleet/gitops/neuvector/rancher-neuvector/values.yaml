@@ -19,7 +19,7 @@ controller:
         bind_password: password
         username_attr: uid
         Enable: true
-        Default_Role: reade
+        Default_Role: reader
   #secret:
   #  enabled: true
   #  data:
