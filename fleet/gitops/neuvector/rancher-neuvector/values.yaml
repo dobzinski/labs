@@ -20,7 +20,7 @@ controller:
         Enable: true
         Default_Role: reader
         group_mapped_roles:
-          - group: scientists
+          - group: ou=scientists,dc=example,dc=com
             global_role: admin
   #secret:
   #  enabled: true
