@@ -20,6 +20,11 @@ controller:
         username_attr: uid
         Enable: true
         Default_Role: reader
+      userinitcfg.yaml: |
+        users:
+        - Fullname: admin
+          Password: password
+          Role: admin
 manager:
   svc:
     type: ClusterIP
