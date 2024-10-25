@@ -25,8 +25,13 @@ controller:
     data:
       userinitcfg.yaml:
         users:
-        - Fullname: admin
-          Password: password
+        -
+          Fullname: user
+          Password: password456
+          Role: reader
+        - 
+          Fullname: admin
+          Password: password123
           Role: admin
 manager:
   svc:
