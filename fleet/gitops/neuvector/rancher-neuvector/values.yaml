@@ -23,14 +23,14 @@ controller:
         username_attr: uid
         Enable: true
         Default_Role: reader
-  secret:
-    enabled: true
-    data:
-      userinitcfg.yaml:
-        users:
-        - Fullname: admin
-          Password: password
-          Role: admin
+  #secret:
+  #  enabled: true
+  #  data:
+  #    userinitcfg.yaml:
+  #      users:
+  #      - Fullname: admin
+  #        Password: password
+  #        Role: admin
 manager:
   svc:
     type: ClusterIP
