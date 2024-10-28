@@ -9,5 +9,3 @@ helm:
     - values.yaml
 dependsOn:
   - name: neuvector-crd
-resources:
-  - config/
