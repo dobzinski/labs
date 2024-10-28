@@ -6,7 +6,7 @@ controller:
   ranchersso:
     enabled: false
   env:
-  - name: LDAP_SECRET
+  - name: LDAP_PASSWORD
     valueFrom:
       secretKeyRef:
         name: ldap-bind
