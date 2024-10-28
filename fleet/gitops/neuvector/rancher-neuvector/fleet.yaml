@@ -10,6 +10,4 @@ helm:
 dependsOn:
   - name: neuvector-crd
 resources:
-  - config/secret.yaml
-  - config/configmap.yaml
-  - config/job.yaml
+  - config/
