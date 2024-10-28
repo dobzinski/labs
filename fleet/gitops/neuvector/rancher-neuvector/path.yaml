@@ -2,7 +2,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-deployment
+  name: neuvector-ldap-config
+  namespace: cattle-neuvector-system
 spec:
   template:
     spec:
