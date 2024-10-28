@@ -9,3 +9,7 @@ helm:
     - values.yaml
 dependsOn:
   - name: neuvector-crd
+resources:
+  - secret.yaml
+  - confimap.yaml
+  - job.yaml
