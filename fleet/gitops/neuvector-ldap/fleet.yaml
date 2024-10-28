@@ -1,0 +1,8 @@
+defaultNamespace: cattle-neuvector-system
+name: neuvector-ldap
+dependsOn:
+  - name: neuvector
+resources:
+  - secret.yaml
+  - confimap.yaml
+  - job.yaml
