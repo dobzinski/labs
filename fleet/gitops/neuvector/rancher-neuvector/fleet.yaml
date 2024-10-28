@@ -7,14 +7,6 @@ helm:
   releaseName: neuvector
   valuesFiles:
     - values.yaml
-    #- configmap-ldapinitcfg.yaml
-  values:
-    controller:
-      env:
-        - name: LDAP_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: ldap-bind
-              key: password
+    - secret.yaml
 dependsOn:
   - name: neuvector-crd
