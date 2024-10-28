@@ -5,27 +5,18 @@ controller:
   replicas: 1
   ranchersso:
     enabled: false
-  env:
-  - name: LDAP_PASSWORD
-    valueFrom:
-      secretKeyRef:
-        name: ldap-bind
-        key: password
   configmap:
     enabled: true
     data:
       # https://www.forumsys.com/2022/05/10/online-ldap-test-server/
       # https://open-docs.neuvector.com/deploying/production/configmap/
       ldapinitcfg.yaml: |
-        directory: OpenLDAP
-        Hostname: ldap.forumsys.com
-        Port: 389
-        base_dn: dc=example,dc=com
-        bind_dn: cn=read-only-admin,dc=example,dc=com
-        bind_password: {{ .Values.controller.env | first | quote }}
-        username_attr: uid
-        Enable: true
-        Default_Role: reader
+        ZDirecto...
+        ICAgICAgICBkaXJlY3Rvcnk6IE9wZW5MREFQCiAgICAgICAgSG9zdG5hbWU6IGxkYXAuZm9ydW1z
+        eXMuY29tCiAgICAgICAgUG9ydDogMzg5CiAgICAgICAgYmFzZV9kbjogZGM9ZXhhbXBsZSxkYz1j
+        b20KICAgICAgICBiaW5kX2RuOiBjbj1yZWFkLW9ubHktYWRtaW4sZGM9ZXhhbXBsZSxkYz1jb20K
+        ICAgICAgICBiaW5kX3Bhc3N3b3JkOiBwYXNzd29yZAogICAgICAgIHVzZXJuYW1lX2F0dHI6IHVp
+        ZAogICAgICAgIEVuYWJsZTogdHJ1ZQogICAgICAgIERlZmF1bHRfUm9sZTogcmVhZGVyCg==
 manager:
   svc:
     type: ClusterIP
