@@ -1,0 +1,7 @@
+defaultNamespace: external-secrets
+name: external-secrets
+helm:
+  releaseName: external-secrets
+  version: 0.8.3
+  valuesFiles:
+    - values.yaml
