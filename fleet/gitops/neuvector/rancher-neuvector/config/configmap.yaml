@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: ldap-bind
+  name: ldap-config
   namespace: cattle-neuvector-system
 data:
   LDAP_BASEDN: "dc=example,dc=com"
