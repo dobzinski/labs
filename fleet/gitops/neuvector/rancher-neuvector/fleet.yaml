@@ -7,9 +7,9 @@ helm:
   releaseName: neuvector
   valuesFiles:
     - values.yaml
+dependsOn:
+  - name: neuvector-crd
 resources:
   - config/secret.yaml
   - config/configmap.yaml
   - config/job.yaml
-dependsOn:
-  - name: neuvector-crd
