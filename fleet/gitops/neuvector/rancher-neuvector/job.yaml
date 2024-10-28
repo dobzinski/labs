@@ -1,0 +1,26 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: update-ldap-config
+  namespace: cattle-neuvector-system
+spec:
+  template:
+    spec:
+      containers:
+      - name: update-ldap-config
+        image: busybox
+        command:
+        - sh
+        - -c
+        - |
+          LDAP_PASSWORD=$(kubectl get secret ldap-bind -o jsonpath="{.data.PASSWORD}" | base64 --decode)
+          LDAP_BASEDN=$(kubectl get configmap ldap-config -o jsonpath="{.data.LDAP_BASEDN}" | base64 --decode)
+          LDAP_BINDDN=$(kubectl get configmap ldap-config -o jsonpath="{.data.LDAP_BINDDN}" | base64 --decode)
+          LDAP_DEFAULTROLE=$(kubectl get configmap ldap-config -o jsonpath="{.data.LDAP_DEFAULTROLE}" | base64 --decode)
+          LDAP_DIRECTORY=$(kubectl get configmap ldap-config -o jsonpath="{.data.LDAP_DIRECTORY}" | base64 --decode)
+          LDAP_ENABLE=$(kubectl get configmap ldap-config -o jsonpath="{.data.LDAP_ENABLE}" | base64 --decode)
+          LDAP_HOSTNAME=$(kubectl get configmap ldap-config -o jsonpath="{.data.LDAP_HOSTNAME}" | base64 --decode)
+          LDAP_PORT=$(kubectl get configmap ldap-config -o jsonpath="{.data.LDAP_PORT}" | base64 --decode)
+          LDAP_USERATTRIBUTE=$(kubectl get configmap ldap-config -o jsonpath="{.data.LDAP_USERATTRIBUTE}" | base64 --decode)
+          kubectl -n cattle-neuvector-system create secret generic neuvector-init --from-literal=ldapinitcfg.yaml="directory: OpenLDAP\nHostname: ${LDAP_HOSTNAME}\nPort: ${LDAP_PORT}\nbase_dn: ${LDAP_BASEDN}\nbind_dn: ${LDAP_BINDDN}\nbind_password: ${LDAP_PASSWORD}\nusername_attr: ${LDAP_USERATTRIBUTE}\nEnable: ${LDAP_ENABLE}\nDefault_Role: ${LDAP_DEFAULTROLE}" --dry-run=client -o yaml | kubectl apply -f -
+      restartPolicy: Never
