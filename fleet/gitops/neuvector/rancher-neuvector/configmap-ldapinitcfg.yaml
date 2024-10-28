@@ -1,16 +1,38 @@
-apiVersion: v1
-kind: ConfigMap
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: neuvector-configmap-ldapinitcfg
+  name: neuvector-controller
   namespace: cattle-neuvector-system
-data:
-  ldapinitcfg.yaml: |
-    directory: OpenLDAP
-    Hostname: ldap.example.com 
-    Port: 389
-    base_dn: dc=example,dc=com
-    bind_dn: cn=read-only-admin,dc=example,dc=com
-    bind_password: "REPLACE_WITH_ENV"
-    username_attr: uid
-    Enable: true
-    Default_Role: reader
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: neuvector-controller
+  template:
+    metadata:
+      labels:
+        app: neuvector-controller
+    spec:
+      initContainers:
+      - name: init-config
+        image: busybox
+        command: ['sh', '-c', 'sed -i "s/REPLACE_WITH_ENV/${LDAP_PASSWORD}/g" /etc/config/ldapinitcfg.yaml']
+        env:
+        - name: LDAP_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: ldap-bind
+              key: password
+        volumeMounts:
+        - name: config-volume
+          mountPath: /etc/config
+      containers:
+      - name: neuvector
+        image: sua-imagem
+        volumeMounts:
+        - name: config-volume
+          mountPath: /etc/config
+      volumes:
+      - name: config-volume
+        configMap:
+          name: neuvector-configmap-ldapinitcfg
