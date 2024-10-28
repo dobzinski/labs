@@ -1,0 +1,6 @@
+defaultNamespace: cattle-neuvector-system
+name: neuvector-ldap-resources
+resources:
+  - secret.yaml
+  - configmap.yaml
+  - job.yaml
