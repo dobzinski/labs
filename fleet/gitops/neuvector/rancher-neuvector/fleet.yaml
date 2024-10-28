@@ -7,6 +7,6 @@ helm:
   releaseName: neuvector
   valuesFiles:
     - values.yaml
-    #- configmap-ldapinitcfg.yaml
+    - configmap-ldapinitcfg.yaml
 dependsOn:
   - name: neuvector-crd
