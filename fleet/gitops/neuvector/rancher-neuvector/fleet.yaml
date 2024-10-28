@@ -8,6 +8,8 @@ helm:
   valuesFiles:
     - values.yaml
 resources:
-  - ./config
+  - config/secret.yaml
+  - config/configmap.yaml
+  - config/job.yaml
 dependsOn:
   - name: neuvector-crd
