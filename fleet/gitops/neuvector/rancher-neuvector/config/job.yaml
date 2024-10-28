@@ -22,5 +22,5 @@ spec:
           LDAP_HOSTNAME=$(kubectl get configmap ldap-config -o jsonpath="{.data.LDAP_HOSTNAME}" | base64 --decode)
           LDAP_PORT=$(kubectl get configmap ldap-config -o jsonpath="{.data.LDAP_PORT}" | base64 --decode)
           LDAP_USERATTRIBUTE=$(kubectl get configmap ldap-config -o jsonpath="{.data.LDAP_USERATTRIBUTE}" | base64 --decode)
-          kubectl create configmap neuvector-init --from-literal=ldapinitcfg.yaml="directory: OpenLDAP\nHostname: ${LDAP_HOSTNAME}\nPort: ${LDAP_PORT}\nbase_dn: ${LDAP_BASEDN}\nbind_dn: ${LDAP_BINDDN}\nbind_password: ${LDAP_PASSWORD}\nusername_attr: ${LDAP_USERATTRIBUTE}\nEnable: ${LDAP_ENABLE}\nDefault_Role: ${LDAP_DEFAULTROLE}" --dry-run=client -o yaml | kubectl apply -f -
+          kubectl -n cattle-neuvector-system create secret generic neuvector-init --from-literal=ldapinitcfg.yaml="directory: OpenLDAP\nHostname: ${LDAP_HOSTNAME}\nPort: ${LDAP_PORT}\nbase_dn: ${LDAP_BASEDN}\nbind_dn: ${LDAP_BINDDN}\nbind_password: ${LDAP_PASSWORD}\nusername_attr: ${LDAP_USERATTRIBUTE}\nEnable: ${LDAP_ENABLE}\nDefault_Role: ${LDAP_DEFAULTROLE}" --dry-run=client -o yaml | kubectl apply -f -
       restartPolicy: Never
