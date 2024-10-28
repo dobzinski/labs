@@ -22,7 +22,7 @@ controller:
         Port: 389
         base_dn: dc=example,dc=com
         bind_dn: cn=read-only-admin,dc=example,dc=com
-        bind_password: $LDAP_PASSWORD
+        bind_password: ${LDAP_PASSWORD}
         username_attr: uid
         Enable: true
         Default_Role: reader
