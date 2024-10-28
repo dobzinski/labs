@@ -14,7 +14,6 @@ controller:
   configmap:
     enabled: true
     data:
-      ldapinitcfg.yaml: []
       ldapinitcfg.yaml: |
         directory: OpenLDAP
         Hostname: ldap.forumsys.com
