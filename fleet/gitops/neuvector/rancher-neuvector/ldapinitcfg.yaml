@@ -1,0 +1,9 @@
+    directory: OpenLDAP
+    Hostname: ldap.forumsys.com
+    Port: 389
+    base_dn: dc=example,dc=com
+    bind_dn: cn=read-only-admin,dc=example,dc=com
+    bind_password: REPLACE_WITH_ENV
+    username_attr: uid
+    Enable: true
+    Default_Role: reader
