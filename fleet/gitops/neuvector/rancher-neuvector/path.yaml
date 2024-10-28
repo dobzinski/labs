@@ -15,8 +15,7 @@ spec:
         - secretRef:
             name: ldap-bind
       containers:
-      - name: my-container
-        image: my-image
+      - name: neuvector-controller
         env:
         - name: LDAP_PASSWORD
           valueFrom:
