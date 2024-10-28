@@ -6,8 +6,8 @@ helm:
   version: 103.0.4+2.7.7
   releaseName: neuvector
   valuesFiles:
-    #- secret.yaml
     - values.yaml
-    #- path.yaml
+resources:
+  - ./config
 dependsOn:
   - name: neuvector-crd
