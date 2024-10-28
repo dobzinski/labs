@@ -6,16 +6,6 @@ helm:
   version: 103.0.4+2.7.7
   releaseName: neuvector
   valuesFiles:
-   # - secret.yaml
-   # - config/externalsecret.yaml
     - values.yaml
-  values:
-    controller:
-      env:
-        - name: LDAP_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: ldap-bind
-              key: password
 dependsOn:
   - name: neuvector-crd
