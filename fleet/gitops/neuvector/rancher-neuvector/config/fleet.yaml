@@ -12,3 +12,5 @@ data:
     username_attr: uid
     Enable: true
     Default_Role: reader
+  name: configmap-ldap-password
+  namespace: cattle-neuvector-system
