@@ -5,12 +5,12 @@ controller:
   replicas: 1
   ranchersso:
     enabled: false
-  env:
-  - name: LDAP_PASSWORD
-    valueFrom:
-      secretKeyRef:
-        name: ldap-bind
-        key: password
+  #env:
+  #- name: LDAP_PASSWORD
+  #  valueFrom:
+  #    secretKeyRef:
+  #      name: ldap-bind
+  #      key: password
   configmap:
     enabled: true
     data:
