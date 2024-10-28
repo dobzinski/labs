@@ -9,13 +9,13 @@ helm:
    # - secret.yaml
    # - config/externalsecret.yaml
     - values.yaml
-  #values:
-  #  controller:
-  #    env:
-  #      - name: LDAP_PASSWORD
-  #        valueFrom:
-  #          secretKeyRef:
-  #            name: ldap-bind
-  #            key: password
+  values:
+    controller:
+      env:
+        - name: LDAP_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: ldap-bind
+              key: password
 dependsOn:
   - name: neuvector-crd
