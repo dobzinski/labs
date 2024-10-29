@@ -1,5 +1,0 @@
-defaultNamespace: cattle-monitoring-system
-name: rancher-monitoring-crd
-helm:
-  releaseName: rancher-monitoring-crd
-  version: 103.2.0+up57.0.3
