@@ -9,9 +9,9 @@ global:
     systemProjectId: p-7nmxk
     url: https://rancher.example.com
 alertmanager:
-  alertmanagerSpec:
-    configSecret: alertmanager-rancher-monitoring-alertmanager
-    useExistingSecret: true
+  #alertmanagerSpec:
+  #  configSecret: alertmanager-rancher-monitoring-alertmanager
+  #  useExistingSecret: true
   ingress:
      enabled: true
      hosts:
