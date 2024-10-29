@@ -1,0 +1,10 @@
+rkeControllerManager:
+  enabled: true
+rkeEtcd:
+  clients:
+    useLocalhost: true
+  enabled: true
+rkeProxy:
+  enabled: true
+rkeScheduler:
+  enabled: true
