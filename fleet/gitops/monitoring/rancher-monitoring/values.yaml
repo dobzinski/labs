@@ -33,13 +33,13 @@ grafana:
     pathType: Prefix
 ingressNginx:
   enabled: true
- #prometheus:
- #  ingress:
- #    enabled: true
- #    hosts:
- #    - prometheus.example.com
- #    ingressClassName: ingress-nginx
- #    pathType: ImplementationSpecific
+ prometheus:
+   ingress:
+     enabled: true
+     hosts:
+     - prometheus.example.com
+     ingressClassName: ingress-nginx
+     pathType: ImplementationSpecific
  #  prometheusSpec:
  #    enableAdminAPI: true
  #    evaluationInterval: 1m
