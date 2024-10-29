@@ -1,4 +1,0 @@
-defaultNamespace: cattle-monitoring-system
-name: prometheus
-dependsOn:
-  - name: rancher-monitoring
