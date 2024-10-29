@@ -33,26 +33,26 @@ grafana:
     pathType: Prefix
 ingressNginx:
   enabled: true
- prometheus:
-   ingress:
-     enabled: true
-     hosts:
-     - prometheus.example.com
-     ingressClassName: ingress-nginx
-     pathType: ImplementationSpecific
-   prometheusSpec:
-     enableAdminAPI: true
-     evaluationInterval: 1m
-     probeSelectorNilUsesHelmValues: false
-     retentionSize: 1GiB
-     scrapeInterval: 1m
-     resources:
-       limits:
-         cpu: 1000m
-         memory: 3000Mi
-       requests:
-         cpu: 300m
-         memory: 750Mi
+ #prometheus:
+ #  ingress:
+ #    enabled: true
+ #    hosts:
+ #    - prometheus.example.com
+ #    ingressClassName: ingress-nginx
+ #    pathType: ImplementationSpecific
+ #  prometheusSpec:
+ #    enableAdminAPI: true
+ #    evaluationInterval: 1m
+ #    probeSelectorNilUsesHelmValues: false
+ #    retentionSize: 1GiB
+ #    scrapeInterval: 1m
+ #    resources:
+ #      limits:
+ #        cpu: 1000m
+ #        memory: 3000Mi
+ #      requests:
+ #        cpu: 300m
+ #        memory: 750Mi
 # #    nodeSelector:
 # #      kubernetes.io/hostname: abc
 # #    storageSpec:
