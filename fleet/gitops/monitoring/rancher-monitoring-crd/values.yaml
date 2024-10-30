@@ -1,0 +1,6 @@
+global:
+  cattle:
+    systemDefaultRegistry: ""
+
+image:
+  tag: v1.18.6
