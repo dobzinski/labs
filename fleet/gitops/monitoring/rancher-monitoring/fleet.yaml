@@ -17,5 +17,5 @@ diff:
       name: rancher-monitoring-admission
       operations:
         - {"op":"remove", "path":"/webhooks"}
-#dependsOn:
-#  - name: rancher-monitoring-crd
+dependsOn:
+  - name: rancher-monitoring-crd
