@@ -1,3 +1,4 @@
+#https://github.com/rancher/charts/tree/main/charts/rancher-monitoring/
 defaultNamespace: cattle-monitoring-system
 name: rancher-monitoring
 helm:
